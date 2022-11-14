@@ -280,3 +280,8 @@ internal_key_store_password = "[{{ internal_key_store_password }}]"
 tls_key_store_key_password = "[{{ tls_key_store_key_password }}]"
 tls_key_store_password = "[{{ tls_key_store_password }}]"
 {% endif %}
+
+{% if apim_https_proxy_port is defined %}
+[transport.https.properties]
+proxyPort = {{ apim_https_proxy_port }}
+{% endif %}
